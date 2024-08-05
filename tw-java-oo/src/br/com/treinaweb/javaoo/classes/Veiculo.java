@@ -6,6 +6,7 @@ public class Veiculo {
     private String marca;
     private String chassi;
     private Integer quantidadeRodas;
+    private float quantidadeCombustivel;
 
     //Métodos Acessores
     public String getNome() {
@@ -40,6 +41,10 @@ public class Veiculo {
         this.quantidadeRodas = quantidadeRodas;
     }
 
+    public float getQuantidadeCombustivel() {
+        return quantidadeCombustivel;
+    }
+
     //Métodos
     public void ligar() {
         System.out.println("O veículo ligou!");
@@ -47,6 +52,15 @@ public class Veiculo {
 
     public void desligar() {
         System.out.println("O veículo desligou!");
+    }
+
+    public float abastecer(float litros) {
+        quantidadeCombustivel += litros;
+        return quantidadeCombustivel;
+    }
+
+    public void quantidadeCombustivel(float quantidadeCombustivel) {
+        this.quantidadeCombustivel = quantidadeCombustivel;
     }
 
 }
