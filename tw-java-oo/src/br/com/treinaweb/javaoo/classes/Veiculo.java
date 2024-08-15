@@ -1,6 +1,7 @@
 package br.com.treinaweb.javaoo.classes;
-
+//Classe
 public class Veiculo {
+    
     //Atributos
     private String nome;
     private String marca;
@@ -14,7 +15,7 @@ public class Veiculo {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nome = nome; // THIS diz respeito a instância atual da classe onde o código está sendo executado. 'this.nome' refere-se à variável de instância, enquanto 'nome' refere-se ao parâmetro do método.
     }
 
     public String getMarca() {
@@ -29,8 +30,12 @@ public class Veiculo {
         return chassi;
     }
 
-    public void setChassi(String chassi) {
-        this.chassi = chassi;
+    public void setChassi(String chassi) throws Exception {
+        if (chassi.length() == 5) {
+            this.chassi = chassi;
+        } else {
+            throw new Exception("Chassi Inválido!");
+        }
     }
 
     public Integer getQuantidadeRodas() {

@@ -4,10 +4,11 @@ import br.com.treinaweb.javaoo.classes.Veiculo;
 
 public class Main {
     public static void main(String[] args) {
-        Veiculo corsa = new Veiculo();
+        try{ Veiculo corsa = new Veiculo();
         //Corsa é uma instância de Veículo e new Veículo é um contrutor, o que garante que a JVM reservasse memória para armazenar esse objeto.
         corsa.setMarca("Chevrolet");
         corsa.setNome("Corsa");
+        corsa.setChassi("ABCDE");
         corsa.abastecer(10);
 
         Veiculo celta = new Veiculo();
@@ -25,5 +26,8 @@ public class Main {
         System.out.println(corsa.getMarca());
         corsa.ligar();
         System.out.println("O CORSA tem: " + corsa.getQuantidadeCombustivel() + " Litros no Tanque!");
+        } catch (Exception e) {
+            System.out.println("Ocorreu um erro!" + e.getMessage());
+        }
     }
 }
